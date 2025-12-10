@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cdp_python"
+version = "0.1.1"
+description = "Chrome DevTools Protocol SDK"
+dynamic = ["readme"]
+license = { text = "MIT" }
+requires-python = ">=3.12"
+authors = [
+    { name = "Trevor Hobenshield", email = "trevorhobenshield@gmail.com" },
+]
+
+keywords = [
+    'chrome',
+    'chromium',
+    'devtools',
+    'protocol',
+    'cdp',
+    'chrome devtools protocol',
+]
+
+dependencies = [
+    # 'uvloop==0.22.1; platform_system != "Windows"',
+    "aiosqlite==0.21.0",
+    "anyio==4.11.0",
+    "nest-asyncio==1.6.0",
+    "trio==0.32.0",
+    "curl-cffi==0.13.0",
+    "orjson==3.11.4",
+    "rich==14.2.0",
+]
+
+classifiers = [
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: Unix",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/trevorhobenshield/cdp_python"
+Repository = "https://github.com/trevorhobenshield/cdp_python"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "bin/*",
+    "src/*",
+    #   "/*.toml",
+    #   "/*.json",
+    #   "/*.lock",
+    #   "/*.md",
+    #   "/mypy.ini",
+    #   "/noxfile.py",
+    #   "examples/*",
+    #   "tests/*",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cdp_python"]
